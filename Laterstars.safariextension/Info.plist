@@ -58,5 +58,7 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://github.com/epogue/laterstars-for-safari/raw/master/updateManifest.plist</string>
 </dict>
 </plist>
