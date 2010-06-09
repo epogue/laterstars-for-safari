@@ -4,4 +4,12 @@ Just a simple Safari extension to replace the one-click fave bookmarklet from La
 
 h2. Download
 
-You can download Laterstars for Safari "here":http://epogue.s3.amazonaws.com/laterstars-01.safariextz
+You can download Laterstars for Safari *"here":http://epogue.s3.amazonaws.com/laterstars-01.safariextz*
+
+h2. Credit
+
+Pretty much all the credit goes to the Laterstars team. I just adapted their incredible bookmarklet into Safari extension form.
+
+h2. To-do
+
+* Add support for the other Laterstars bookmarklets (swappable via the Safari settings panel)
