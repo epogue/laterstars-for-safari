@@ -1,9 +1,7 @@
 function handleMessage(msgEvent) {
 	var messageName = msgEvent.name;
 	var messageData = msgEvent.message;
-	if (messageName === "laterstars-faved") {
-		console.log("I got here!");
-		
+	if (messageName === "laterstars-faved") {		
 		var d = document,
 				s = d.createElement('script'),
 				c = d.createElement('link'),
