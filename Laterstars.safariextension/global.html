@@ -17,7 +17,6 @@ function performCommand(event){
 function performValidate(event){
 	if (event.command === "laterstars-button") {
 		event.target.disabled = (!username || !event.target.browserWindow.activeTab.url);
-		if (!username) event.target.tooltip = "Please enter your Twitter username in the extension settings"
 	}
 }
 
