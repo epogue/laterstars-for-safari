@@ -29,7 +29,7 @@ if (isInIFrame == true) {
 				b.appendChild(div);
 
 				// Insert script
-				s.setAttribute('src', 'http://laterstars.com/' + messageData.twitterUsername + '/bookmarklet/oneclick?url=' + encodeURIComponent(d.location.href) + '&title=' + encodeURIComponent(d.title));
+				s.setAttribute('src', 'http://laterstars.com/' + encodeURI(messageData.twitterUsername) + '/bookmarklet/oneclick?url=' + encodeURIComponent(d.location.href) + '&title=' + encodeURIComponent(d.title));
 				b.appendChild(s);
 			} catch(e) {
 				alert('simma');
