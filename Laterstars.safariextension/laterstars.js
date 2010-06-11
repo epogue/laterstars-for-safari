@@ -2,6 +2,7 @@ var isInIFrame = (window.location != window.parent.location) ? true : false;
 if (isInIFrame == true) {
 	
 } else {
+	
 	function handleMessage(msgEvent) {
 		var messageName = msgEvent.name;
 		var messageData = msgEvent.message;
@@ -28,7 +29,7 @@ if (isInIFrame == true) {
 				b.appendChild(div);
 
 				// Insert script
-				s.setAttribute('src', 'http://laterstars.com/epogue/bookmarklet/oneclick?url=' + encodeURIComponent(d.location.href) + '&title=' + encodeURIComponent(d.title));
+				s.setAttribute('src', 'http://laterstars.com/' + messageData.twitterUsername + '/bookmarklet/oneclick?url=' + encodeURIComponent(d.location.href) + '&title=' + encodeURIComponent(d.title));
 				b.appendChild(s);
 			} catch(e) {
 				alert('simma');

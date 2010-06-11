@@ -2,28 +2,55 @@
 <html>
 <head>
 <title>Laterstars</title>
+<script src="jquery-1.4.2.min.js"></script>
 <script type="text/javascript">
-function performCommand(event)
-{
-    if (event.command === "laterstars-button") {
-        
-        safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("laterstars-faved", "");
-        
-    }
-}
- 
-function validateCommand(event)
-{
-    if (event.command === "laterstars-button") {
-        
-    }
-}
- 
 safari.application.addEventListener("command", performCommand, false);
-safari.application.addEventListener("validate", validateCommand, false);
+safari.application.addEventListener("validate", performValidate, false);
+safari.extension.settings.addEventListener("change", settingsChanged, false);
 
+function performCommand(event){
+	if (event.command === "laterstars-button") {
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("laterstars-faved", { twitterUsername: username });
+	}
+}
 
+function performValidate(event){
+	if (event.command === "laterstars-button") {
+		event.target.disabled = (!username || !event.target.browserWindow.activeTab.url);
+		if (!username) event.target.tooltip = "Please enter your Twitter username in the extension settings"
+	}
+}
+
+function feedCheck(event){
+	if (username){
+		$.ajax({
+			url: "http://laterstars.com/" + encodeURI(username) + ".atom?filter=unread",
+			success: function(d){
+				setBadge($(d).find("entry").length);
+			}
+		});
+	}
+}
+
+function setBadge(n){
+	$.each(safari.extension.toolbarItems, function(i, toolbarItem){
+		toolbarItem.badge = n;
+	});
+}
+
+function settingsChanged(event){
+	if (event.key == "updateInterval"){
+		safari.extension.globalPage.contentWindow.clearInterval(updater);
+		updater = safari.extension.globalPage.contentWindow.setInterval(feedCheck, event.newValue * 1000)
+	} else if (event.key == "twitterUsername") {
+		username = safari.extension.settings.getItem("twitterUsername");
+		feedCheck();
+	}
+}
+
+var username = safari.extension.settings.getItem("twitterUsername");
+var updater = safari.extension.globalPage.contentWindow.setInterval(feedCheck, safari.extension.settings.getItem("updateInterval") * 1000);
+feedCheck();
 </script>
 </head>
-<body></body>
 </html>

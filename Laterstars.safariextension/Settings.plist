@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Key</key>
+		<string>twitterUsername</string>
+		<key>Secure</key>
+		<false/>
+		<key>Title</key>
+		<string>Twitter username</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<real>60</real>
+		<key>Key</key>
+		<string>updateInterval</string>
+		<key>Secure</key>
+		<false/>
+		<key>Title</key>
+		<string>Update interval</string>
+		<key>Titles</key>
+		<array>
+			<string>1 minute</string>
+			<string>5 minutes</string>
+			<string>10 minutes</string>
+			<string>15 minutes</string>
+			<string>30 minutes</string>
+			<string>45 minutes</string>
+			<string>1 hour</string>
+		</array>
+		<key>Type</key>
+		<string>PopUpButton</string>
+		<key>Values</key>
+		<array>
+			<real>60</real>
+			<real>300</real>
+			<real>600</real>
+			<real>900</real>
+			<real>1800</real>
+			<real>2700</real>
+			<real>3600</real>
+		</array>
+	</dict>
+</array>
+</plist>
