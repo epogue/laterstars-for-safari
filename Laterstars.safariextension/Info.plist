@@ -11,9 +11,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.4</string>
+	<string>0.41</string>
 	<key>CFBundleVersion</key>
-	<string>40</string>
+	<string>41</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Global Page</key>
@@ -60,5 +60,7 @@
 	</dict>
 	<key>Update Manifest URL</key>
 	<string>http://epogue.s3.amazonaws.com/updateManifest.plist</string>
+	<key>Website</key>
+	<string>http://dinkdoink.com</string>
 </dict>
 </plist>
