@@ -44,5 +44,25 @@
 			<real>3600</real>
 		</array>
 	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>open</string>
+		<key>Key</key>
+		<string>buttonBehavior</string>
+		<key>Title</key>
+		<string>On button click</string>
+		<key>Titles</key>
+		<array>
+			<string>Open Laterstars</string>
+			<string>One-Click Fave</string>
+		</array>
+		<key>Type</key>
+		<string>RadioButtons</string>
+		<key>Values</key>
+		<array>
+			<string>open</string>
+			<string>oneClick</string>
+		</array>
+	</dict>
 </array>
 </plist>
