@@ -8,7 +8,7 @@ if (isInIFrame == true) {
 		var messageData = msgEvent.message;
 		if (messageName === "laterstars-faved") {		
 			if ((shift == 1 && messageData.buttonBehavior == "open") || (shift == 0 && messageData.buttonBehavior == "oneClick")) {
-				oneClick();
+				oneClick(messageData);
 			} else {
 				safari.self.tab.dispatchMessage("openLaterstars","");
 				shift = 0;
@@ -16,7 +16,7 @@ if (isInIFrame == true) {
 		}
 	}
 	
-	function oneClick(){
+	function oneClick(messageData){
 		var d = document,
 				s = d.createElement('script'),
 				c = d.createElement('link'),
