@@ -44,7 +44,7 @@ function feedCheck(event){
 		$.ajax({
 			url: "http://laterstars.com/faved_links/inbox_count",
 			success: function(d){
-				setBadge($(d).find("entry").length);
+				setBadge(d);
 			}
 		});
 	}
