@@ -42,7 +42,7 @@ function openLaterstars(){
 function feedCheck(event){
 	if (username){
 		$.ajax({
-			url: "http://laterstars.com/" + encodeURI(username) + ".atom?filter=unread",
+			url: "http://laterstars.com/faved_links/inbox_count",
 			success: function(d){
 				setBadge($(d).find("entry").length);
 			}
