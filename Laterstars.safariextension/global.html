@@ -16,6 +16,8 @@ function performCommand(event){
 }
 
 function performValidate(event){
+	feedCheck();
+	
 	if (event.command === "laterstars-button") {
 		event.target.disabled = (!username || !event.target.browserWindow.activeTab.url);
 		switch (safari.extension.settings.getItem("buttonBehavior")){
@@ -39,7 +41,7 @@ function openLaterstars(){
 	safari.application.activeBrowserWindow.openTab().url = "http://laterstars.com/" + username + "/unread";
 }
 
-function feedCheck(event){
+function feedCheck(){
 	if (username){
 		$.ajax({
 			url: "http://laterstars.com/faved_links/inbox_count",
